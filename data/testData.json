@@ -2,14 +2,17 @@
   "URL" : "http://automationexercise.com",
   "Login": {
     "ValidCredentials": {
-      "Username": " ",
-      "Password": " "
+      "Username":"  ",
+      "Password":"  ",
+      "email":"     "
     },
+
     "InvalidCredentials": {
       "InvalidUsername": {
         "Username": " ",
         "Password": " "
       },
+
       "InvalidPassword": {
         "Username": " ",
         "Password": " "

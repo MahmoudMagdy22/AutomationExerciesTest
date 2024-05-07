@@ -9,7 +9,7 @@ public class HomePage extends MethodHandles {
         super(driver);
     }
     private final By homeIcon = By.cssSelector("div[class='item active'] div[class='col-sm-6'] h2");
-    private final By signInAndLoginButton = By.xpath("//*[@id='header']//li[1]//a[1]");
+    private final By signInAndLoginButton = By.xpath("//a[normalize-space()='Signup / Login']");
     private final By loggedInAsUserName =By.xpath("//i[@class='fa fa-user']");
     private final By deleteAccountButton=By.xpath("//a[normalize-space()='Delete Account']");
 
@@ -25,9 +25,12 @@ public class HomePage extends MethodHandles {
         return isDisplayed(homeIcon,5);
     }
     public LoginAndSignupPage clickOnLoginButton(){
-        moveToElementAndClick(signInAndLoginButton,5);
+        click(signInAndLoginButton,5);
         return new LoginAndSignupPage(driver);
     }
+
+
+
 
     public LoginAndSignupPage homePageScript(){
         verifyHomePage();

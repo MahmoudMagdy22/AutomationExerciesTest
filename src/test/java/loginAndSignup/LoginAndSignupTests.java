@@ -12,8 +12,8 @@ import pages.LoginAndSignupPage;
 public class LoginAndSignupTests extends BaseTest {
     @Test
     public void signUpTest() {
-        homePage.verifyHomePage();
 
+        homePage.verifyHomePage();
         LoginAndSignupPage loginAndSignupPage = homePage.clickOnLoginButton();
         loginAndSignupPage.signUpFormExist();
         loginAndSignupPage.signUpFeature("mahmoud","mmagde22@yahoo.com");
@@ -33,6 +33,20 @@ public class LoginAndSignupTests extends BaseTest {
         deleteAccountPage.deleteAccountMessageVisible();
         homePage = deleteAccountPage.clickContinueButton();
             }
+
+    @Test
+    public void LoginTest(){
+        LoginAndSignupPage loginAndSignupPage=homePage.homePageScript();
+        loginAndSignupPage.logInFormExist();
+        loginAndSignupPage.loginScript("mmagde22@yahoo.com","My password");
+        loginAndSignupPage.clickLoginButton();
+        homePage.validateLogInUser();
+        DeleteAccountPage deleteAccountPage = homePage.clickDeleteAccountButton();
+        deleteAccountPage.deleteAccountMessageVisible();
+        homePage = deleteAccountPage.clickContinueButton();
+
+    }
+
 
 
 }

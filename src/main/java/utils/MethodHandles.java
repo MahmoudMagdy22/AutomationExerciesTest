@@ -71,12 +71,6 @@ public class MethodHandles {
         actions.moveToElement(webElement(locator)).build().perform();
     }
 
-    protected void moveToElementAndClick(By locator,int time){
-        invisibilityOfElement(loader,5);
-        actions =new Actions(driver);
-        explicitWait(locator,time);
-        actions.moveToElement(webElement(locator)).click().build().perform();
-    }
 
     protected void clickWithActions(By locator,int time){
         invisibilityOfElement(loader,10);
