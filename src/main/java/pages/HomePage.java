@@ -13,6 +13,8 @@ public class HomePage extends MethodHandles {
     private final By loggedInAsUserName =By.xpath("//i[@class='fa fa-user']");
     private final By deleteAccountButton=By.xpath("//a[normalize-space()='Delete Account']");
 
+    private final By testCasesButton = By.linkText("Test Cases");
+
     public void validateLogInUser(){
         isDisplayed(loggedInAsUserName,10);
     }
@@ -33,5 +35,10 @@ public class HomePage extends MethodHandles {
         verifyHomePage();
         clickOnLoginButton();
         return new LoginAndSignupPage(driver);
+    }
+    public TestCasesPage clickOnTestCasesButton(){
+        verifyHomePage();
+        click(testCasesButton , 10);
+        return new TestCasesPage(driver);
     }
 }
